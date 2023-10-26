@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de películas</title>
+</head>
+<body>
+  <h1>Lista de películas</h1>
+  <ul>
+    <script>
+      // Obtener la lista de películas del API
+      const movies = await fetch("http://localhost:3000/movies").then((response) => response.json());
+
+      // Mostrar la lista de películas
+      for (const movie of movies) {
+        document.querySelector("ul").innerHTML += `<li>${movie.name}</li>`;
+      }
+    </script>
+  </ul>
+</body>
+</html>
